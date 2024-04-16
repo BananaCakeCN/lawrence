@@ -1,0 +1,49 @@
+#start{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 20px);
+    background-color: #fff;
+    padding-left: 20px;
+}
+#map{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+#content{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #00000000;
+    overflow-y: auto;
+    transition: 0.3s background-color ease;
+}
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#agent{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 100%;
+}
+#location{
+    color: #fff;
+    margin-left: 20px;
+    height: 100%;
+}
+.axis{
+    filter: opacity(0);
+    transition: filter 0.3s ease;
+}
+#cover{
+    border-radius: 5px;
+    height: calc(100% - 200px);
+    position: relative;
+}
+#places{
+    height: 100%;
+    color: #fff;
+    margin-left: 20px;
+}
