@@ -28,22 +28,39 @@ body{
     width: 100%;
     top: 100%;
 }
-#location{
-    color: #fff;
-    margin-left: 20px;
-    height: 100%;
-}
 .axis{
     filter: opacity(0);
     transition: filter 0.3s ease;
 }
 #cover{
     border-radius: 5px;
-    height: calc(100% - 200px);
+    height: calc(100% - 280px);
     position: relative;
 }
-#places{
-    height: 100%;
+#places, #Human-environment-Interaction, #location, #movement, #region{
+    min-height: 100%;
     color: #fff;
     margin-left: 20px;
+}
+#scrollText{
+    position: absolute;
+    bottom: 20px;
+    width: calc(100% - 20px);
+    text-align: center;
+}
+a{
+    color: #8585ff;
+    display: block;
+}
+a:visited{
+    color: #8585ff;
+}
+h1{
+    font-size: 50px;
+}
+h2{
+    font-size: 35px;
+}
+p{
+    font-size: 24px;
 }

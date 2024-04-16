@@ -15,6 +15,7 @@ async function scrollEvent(){
         document.getElementById('content').addEventListener('scroll', scrollEvent114)
     }else{
         var i = 0;
+        document.getElementById('scrollText').innerText = 'Scroll more :('
         while (document.scrollingElement.scrollTop > 0){
             document.scrollingElement.scrollTop -= 5+i/window.innerHeight;
             await sleep(300);
@@ -23,7 +24,7 @@ async function scrollEvent(){
     }
 }
 function scrollEvent114(){
-    if(this.scrollTop > 400 && this.scrollTop < window.innerHeight + 240){
+    if(this.scrollTop > 400 && this.scrollTop < window.innerHeight + 350){
         this.style.backgroundColor = '';
         document.getElementsByClassName('axis')[0].style.filter = 'opacity(1)';
         document.getElementsByClassName('axis')[1].style.filter = 'opacity(1)';
@@ -31,8 +32,8 @@ function scrollEvent114(){
         document.getElementsByClassName('axis')[0].style.filter = '';
         document.getElementsByClassName('axis')[1].style.filter = '';
     }
-    if(this.scrollTop > 100 && (this.scrollTop <= 400 || this.scrollTop >= window.innerHeight + 240)){
-        this.style.backgroundColor = '#000000aa';
+    if(this.scrollTop > 100 && (this.scrollTop <= 400 || this.scrollTop >= window.innerHeight + 350)){
+        this.style.backgroundColor = '#000000cc';
         document.getElementById('location').style.color = '';
         document.getElementById('places').style.color = '';
     }else{
