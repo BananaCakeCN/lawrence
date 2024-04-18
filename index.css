@@ -37,10 +37,13 @@ body{
     height: calc(100% - 280px);
     position: relative;
 }
-#places, #Human-environment-Interaction, #location, #movement, #region{
+#places, #Human-environment-Interaction, #location, #movement, #region, #intro{
     min-height: 100%;
     color: #fff;
     margin-left: 20px;
+}
+#intro{
+    color: #000;
 }
 #scrollText{
     position: absolute;
