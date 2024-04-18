@@ -1,7 +1,7 @@
 const sleep = ms => new Promise(res => setTimeout(res, ms));
 //document.addEventListener('scrollend', scrollEvent);
 async function scrollEvent(){
-    if(document.scrollingElement.scrollTop >= 300){
+    if(document.scrollingElement.scrollTop >= window.innerHeight/4){
         clearInterval(a);
         var i = 0
         while (document.scrollingElement.scrollTop < window.innerHeight){
@@ -36,9 +36,11 @@ function scrollEvent114(){
         this.style.backgroundColor = '#000000cc';
         document.getElementById('location').style.color = '';
         document.getElementById('places').style.color = '';
+        document.getElementById('intro').style.color = '#fff';
     }else{
         this.style.backgroundColor = '';
         document.getElementById('location').style.color = '#000';
+        document.getElementById('intro').style.color = '';
         document.getElementById('places').style.color = '#000';
     }
 }
