@@ -1,12 +1,12 @@
 const sleep = ms => new Promise(res => setTimeout(res, ms));
-document.addEventListener('scrollend', scrollEvent);
-document.getElementById('cover').style.left = 'calc(50% - ' + document.getElementById('cover').offsetWidth/2 + 'px)';
+//document.addEventListener('scrollend', scrollEvent);
 async function scrollEvent(){
     if(document.scrollingElement.scrollTop >= 300){
+        clearInterval(a);
         var i = 0
         while (document.scrollingElement.scrollTop < window.innerHeight){
             document.scrollingElement.scrollTop += 5+i/window.innerHeight;
-            await sleep(300);
+            await sleep(20);
             i++;
         }
         document.removeEventListener('scrollend', scrollEvent);
@@ -18,7 +18,7 @@ async function scrollEvent(){
         document.getElementById('scrollText').innerText = 'Scroll more :('
         while (document.scrollingElement.scrollTop > 0){
             document.scrollingElement.scrollTop -= 5+i/window.innerHeight;
-            await sleep(300);
+            await sleep(20);
             i++;
         }
     }
@@ -40,5 +40,25 @@ function scrollEvent114(){
         this.style.backgroundColor = '';
         document.getElementById('location').style.color = '#000';
         document.getElementById('places').style.color = '#000';
+    }
+}
+var last = 0;
+var current = 0
+var scrolling = false
+document.addEventListener('scroll', function(){scrolling = true});
+a = setInterval(scroll, 10)
+var temps = 0;
+function scroll(){
+    document.getElementById('cover').style.left = 'calc(50% - ' + (document.getElementById('cover').offsetWidth/2) + 'px)';
+    last = current;
+    current = window.scrollY;
+    if(last==current && scrolling){
+        temps++
+        if(temps>5){
+            scrollEvent();
+            scrolling = false;
+        }
+    }else{
+        temps = 0
     }
 }
